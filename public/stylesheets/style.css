@@ -10,6 +10,10 @@ body {
   height: 100vh;
 }
 
+.add {
+  padding-top: 0.5rem;
+} 
+
 .todo-list {
   width: 75%;
   padding-top: 2rem;
