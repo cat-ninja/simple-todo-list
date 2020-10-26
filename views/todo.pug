@@ -6,6 +6,7 @@ html
     link(rel="stylesheet" href="./stylesheets/style.css")
     script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" defer)
     script(src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous" defer)
+    script(src="https://kit.fontawesome.com/44e49c0c00.js" crossorigin="anonymous" defer)
     script(src="./javascripts/items.js" defer)
   body
     div(class="app")    
@@ -15,8 +16,17 @@ html
                 p(class="lead") A simple TODO list application built using Express and Bootstrap
             div(class="container add")
                 div(class="input-group")
-                    input(type="text" class="form-control todo-text" aria-label="Enter your TODO here" aria-describedby="inputGroup-sizing-lg")         
+                    input(type="text" class="form-control todo-text shadow-none" placeholder="Enter your TODO here" aria-describedby="inputGroup-sizing-lg")         
                     div(class="input-group-append")
-                        button(class="input-group-text add-item" id="basic-addon2") Put a TODO
+                        button(class="input-group-text add-item" id="basic-addon2" title="Add item")
+                            i(class="far fa-plus-square fa-1x")
             div(class="container todo-list")    
-                div(class='list-group') 
+                div(class='list-group')
+                    each val in items
+                        a(role="button" class="list-group-item list-group-item-action")
+                            div(class="d-flex w-100 justify-content-between")
+                                div(class='item')
+                                    h5(class="mb-1")=val.name
+                                    small=val.date
+                                div(class='checker d-flex align-items-center')
+                                    input(type='checkbox')

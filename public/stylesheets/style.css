@@ -1,5 +1,9 @@
+html {
+  background-color: #e9ecef;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .jumbotron {
@@ -9,4 +13,13 @@ body {
 .todo-list {
   width: 75%;
   padding-top: 2rem;
+}
+
+button,
+button:focus {
+  outline: none;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
 }
